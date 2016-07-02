@@ -3,8 +3,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Jake;
-(function (Jake) {
+define("states/boot", ["require", "exports"], function (require, exports) {
+    "use strict";
     var Boot = (function (_super) {
         __extends(Boot, _super);
         function Boot() {
@@ -23,21 +23,21 @@ var Jake;
             }
         };
         return Boot;
-    })(Phaser.State);
-    Jake.Boot = Boot;
-})(Jake || (Jake = {}));
-var Jake;
-(function (Jake) {
+    }(Phaser.State));
+    exports.Boot = Boot;
+});
+define("game", ["require", "exports", "states/boot"], function (require, exports, boot_1) {
+    "use strict";
     var Game = (function (_super) {
         __extends(Game, _super);
         function Game() {
             _super.call(this, 800, 600, Phaser.AUTO, 'content', null);
-            this.state.add('Boot', Jake.Boot, false);
+            this.state.add('Boot', boot_1.Boot, false);
             this.state.start('Boot');
         }
         return Game;
-    })(Phaser.Game);
-    Jake.Game = Game;
-})(Jake || (Jake = {}));
-new Jake.Game();
+    }(Phaser.Game));
+    exports.Game = Game;
+    new Game();
+});
 //# sourceMappingURL=game.js.map
