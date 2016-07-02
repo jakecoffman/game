@@ -1,0 +1,15 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "amd",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outFile": "./dist/game.js",
+    "sourceMap": true
+  },
+  "exclude": [
+    "typescript",
+    "dist"
+  ]
+}
